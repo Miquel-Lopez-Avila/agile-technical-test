@@ -3,26 +3,27 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  settings: {
-    'import/resolver': {
-      node: {
-        paths: [path.resolve(__dirname)]
-      }
-    }
-  },
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'plugin:import/typescript',
     'plugin:prettier/recommended',
+    "plugin:import/typescript",
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.ts', '.tsx']
+      }
+    }
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.app.json'
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
@@ -37,6 +38,7 @@ module.exports = {
     'react/jsx-uses-react': ['off'],
     'react/no-unescaped-entities': ['off'],
     'import/prefer-default-export': ['off'],
+    'no-restricted-globals': ['off'],
     'react/require-default-props': ['off'],
     'no-restricted-exports': ['off'],
     'import/no-extraneous-dependencies': ['off'],
@@ -49,7 +51,7 @@ module.exports = {
         extensions: ['.tsx']
       }
     ],
-    'import/extensions': ['off']
+    'import/extension': ['off']
   },
   ignorePatterns: ['public', 'src/__generated__', 'vite.config.ts']
 };
