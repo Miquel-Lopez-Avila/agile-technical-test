@@ -1,21 +1,22 @@
 import { css } from 'styled-components';
+import roboto from '@/application/fonts/Roboto/Roboto-Regular.ttf';
+import fonts from '../fonts';
 
 export const appGlobals = css`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 400;
   }
 
   body {
     margin: 0 !important;
     padding: 0 !important;
-    font-family: 'Roboto', serif;
     font-weight: 400;
     font-style: normal;
     position: relative;
     overflow-x: hidden;
+    ${fonts.roboto}
   }
 
   .backdrop {
@@ -36,6 +37,13 @@ export const appGlobals = css`
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 90%;
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    src: url(${roboto}) format('truetype');
+    font-style: normal;
+    font-weight: 400;
   }
 `;
 

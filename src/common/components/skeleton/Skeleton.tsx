@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Wrapper } from './Skeleton.styled';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   height?: string;
 }
 
-const Skeleton: React.FC<Props> = ({ width = '100%', height = '20px' }) => (
+const Skeleton: FC<Props> = ({ width = '100%', height = '20px' }) => (
   <Wrapper width={width} height={height} />
 );
 

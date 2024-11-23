@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   Wrapper,
   ContainerCopyRight,
@@ -6,6 +7,7 @@ import {
 } from './Footer.styled';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,7 +18,7 @@ const Footer = () => {
           <span> {currentYear}</span>
         </CopyRight>
         <AppVersion>
-          Version:&nbsp;
+          {t('components.footer.version')}:&nbsp;
           <span>{process.env.REACT_APP_VERSION}</span>
         </AppVersion>
       </ContainerCopyRight>

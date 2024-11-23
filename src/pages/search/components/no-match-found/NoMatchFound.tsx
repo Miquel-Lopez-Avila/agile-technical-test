@@ -1,24 +1,23 @@
-import React from 'react';
-import { Wrapper, Text } from './NoMatchFound.styled';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getAllAnimals } from '@/common/utils/fake-data';
+import { Wrapper, Text } from './NoMatchFound.styled';
 
 interface Props {
   searchValue?: string | null;
 }
-const NoMatchFound: React.FC<Props> = ({ searchValue }) => {
+const NoMatchFound: FC<Props> = ({ searchValue }) => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       {searchValue && (
         <Text>
-          No results found for:{' '}
-          <span style={{ fontWeight: 'bold' }}>'{searchValue}'</span>
+          {t('pages.search.noResultsFound')}: <b>'{searchValue}'</b>
         </Text>
       )}
       <Text>
-        Try looking for:{' '}
-        <span style={{ fontWeight: 'bold' }}>
-          {getAllAnimals().join(', ')}.
-        </span>
+        {t('pages.search.tryLooking')}: <b>{getAllAnimals().join(', ')}.</b>
       </Text>
     </Wrapper>
   );

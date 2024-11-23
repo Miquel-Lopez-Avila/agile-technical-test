@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react';
+import { FC, useRef, useState, KeyboardEvent, FormEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Button from '@/common/components/button/Button';
-import { enterKey, textareaBaseRows } from '@/application/config/variables';
+import { textareaBaseRows } from '@/application/config/variables';
 import { Size } from './enums';
 import {
   Wrapper,
@@ -17,10 +18,11 @@ interface Props {
   size?: Size.MEDIUM | Size.SMALL;
 }
 
-const SearchForm: React.FC<Props> = ({
+const SearchForm: FC<Props> = ({
   showSubmitButton = true,
   size = Size.MEDIUM
 }) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -31,7 +33,7 @@ const SearchForm: React.FC<Props> = ({
   );
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate(`/search?q=${searchValue}`);
   };
@@ -65,17 +67,15 @@ const SearchForm: React.FC<Props> = ({
    * @param event
    * @returns {void}
    */
-  const handleKeyDownTextarea = (
-    event: React.KeyboardEvent<HTMLTextAreaElement>
-  ) => {
-    if (event.key === enterKey) {
+  const handleKeyDownTextarea = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter') {
       event.preventDefault();
       navigate(`/search?q=${searchValue}`);
     }
   };
 
   return (
-    <Form id="home-search" onSubmit={handleSubmitForm} size={size}>
+    <Form onSubmit={handleSubmitForm} size={size}>
       <Wrapper size={size}>
         <ContainerIcons>
           <SearchIcon />
@@ -83,7 +83,7 @@ const SearchForm: React.FC<Props> = ({
         <TextareaField
           maxLength={2048}
           value={searchValue}
-          aria-label="Buscar"
+          aria-label={t('components.searchForm.search')}
           ref={textareaRef}
           onKeyDown={handleKeyDownTextarea}
           name="q"
@@ -97,7 +97,7 @@ const SearchForm: React.FC<Props> = ({
           <CloseIcon onClick={handleResetForm} />
         </ContainerIcons>
       </Wrapper>
-      {showSubmitButton && <Button disabled={!searchValue}>Buscar</Button>}
+      {showSubmitButton && <Button disabled={!searchValue}>{t('components.searchForm.search')}</Button>}
     </Form>
   );
 };

@@ -1,12 +1,12 @@
 import { useLayoutEffect, useState } from 'react';
-import { tabletBreakpoint } from '@/application/config/variables';
+import { breakpoints } from '@/application/styles/breakpoints';
 
 const useIsTablet = () => {
   const [isTablet, setIsTablet] = useState(false);
 
   useLayoutEffect(() => {
     const updateDeviceState = () => {
-      setIsTablet(window.innerWidth <= tabletBreakpoint);
+      setIsTablet(window.innerWidth <= breakpoints.tablet);
     };
 
     window.addEventListener('resize', updateDeviceState);

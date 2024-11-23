@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 
-interface props {
-  type: React.FC<any>;
+interface Props {
+  type: FC<any>;
 }
-const Icon: React.FC<props> = ({ type, ...rest }) => {
+const Icon: FC<Props> = ({ type, ...rest }) => {
   const IconComponent = type;
 
   return <IconComponent {...rest} />;

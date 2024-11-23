@@ -3,7 +3,7 @@ import ImagePreview from '@/common/components/image-preview/ImagePreview';
 import { paletteColors } from '@/application/styles/palette-colors';
 import Link from '@/common/components/link/Link';
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.section   `
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -22,8 +22,8 @@ export const SectionLink = styled(Link)`
 
 export const Preview = styled(ImagePreview)`
   width: 100%;
-  // TODO: change fixxed height
-  min-height: 150px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 `;
 
 export const Description = styled.p``;

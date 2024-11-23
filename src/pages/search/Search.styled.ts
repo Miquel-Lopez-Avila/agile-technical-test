@@ -2,17 +2,17 @@ import styled from 'styled-components';
 import { device } from '@/application/styles/breakpoints';
 
 export const Wrapper = styled.div`
-  min-height: calc(100vh - 95px - 50px);
-  padding: 30px 15px;
+  min-height: calc(100vh - 81px - 50px);
+  padding: 20px 15px;
 
   @media ${device.tablet} {
-    min-height: calc(100vh - 69px - 50px);
-    padding: 20px 20px;
+    min-height: calc(100vh - 55px - 50px);
+    padding: 30px 20px;
   }
 `;
 
 export const Container = styled.div`
-  max-width: 1000px;
+  max-width: 1230px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -23,11 +23,12 @@ export const Container = styled.div`
   }
 `;
 
-export const ContainerSections = styled.div`
+export const ContainerSections = styled.article`
   display: flex;
   flex-direction: column;
   gap: 20px;
   flex: 4;
+  width: 100%;
 `;
 
 export const ContainerPreview = styled.div`

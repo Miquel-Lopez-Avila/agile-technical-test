@@ -13,7 +13,6 @@ export const ContainerCopyRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
   height: 100%;
   margin: auto;
 `;

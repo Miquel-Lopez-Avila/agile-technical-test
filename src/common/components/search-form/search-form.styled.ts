@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CloseOutlined, SearchOutlined } from '@ant-design/icons';
 import { paletteColors } from '@/application/styles/palette-colors';
 import { device } from '@/application/styles/breakpoints';
@@ -10,7 +10,7 @@ export const Wrapper = styled.div<{
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 3px;
   border: 1px solid ${paletteColors.grey};
   border-radius: 24px !important;
   min-width: 100%;
@@ -35,20 +35,39 @@ export const TextareaField = styled.textarea`
 `;
 
 export const SearchIcon = styled(SearchOutlined)`
-  width: 20px;
-  margin: 10px 8px;
+  padding: 5px;
 `;
 
 export const CloseIcon = styled(CloseOutlined)`
-  width: 15px;
   cursor: pointer;
-  margin: 10px 8px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: unset;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: ${paletteColors.darkGrey};
+  }
 `;
 
 export const ContainerIcons = styled.div`
   display: grid;
   place-items: center;
   height: fit-content;
+`;
+
+const textareaFieldMedium = css`
+  padding-top: 11px;
+  min-height: 36px;
+  margin-bottom: 8px;
+  font-size: 16px;
+`;
+
+const textareaFieldSmall = css`
+  padding-top: 4px;
+  min-height: 22px;
+  margin-bottom: 4px;
+  font-size: 14px;
 `;
 
 export const Form = styled.form<{
@@ -62,14 +81,16 @@ export const Form = styled.form<{
   width: 100%;
 
   ${TextareaField} {
-    padding-top: ${({ size }) => (size === Size.MEDIUM ? '11px' : '7px')};
-    min-height: ${({ size }) => (size === Size.MEDIUM ? '36px' : '22px')};
-    margin-bottom: ${({ size }) => (size === Size.MEDIUM ? '8px' : '4px')};
-    font-size: ${({ size }) => (size === Size.MEDIUM ? '16px' : '14px')};
+    ${({ size }) =>
+      size === Size.MEDIUM ? textareaFieldMedium : textareaFieldSmall};
   }
 
   ${ContainerIcons} {
     min-height: ${({ size }) => (size === Size.MEDIUM ? '44px' : '22px')};
+  }
+
+  ${CloseIcon}, ${SearchIcon} {
+    margin: ${({ size }) => (size === Size.MEDIUM ? '10px 8px' : '2px 8px')};
   }
 
   @media ${device.tablet} {

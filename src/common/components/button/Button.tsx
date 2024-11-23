@@ -1,12 +1,12 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 import { ButtonWrapper } from './Button.styled';
 
-interface props {
+interface Props {
   disabled?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const Button: React.FC<props> = ({ children, disabled, ...rest }) => {
+const Button: FC<Props> = ({ children, disabled, ...rest }) => {
   return (
     <ButtonWrapper disabled={disabled} {...rest}>
       {children}

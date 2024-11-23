@@ -9,6 +9,12 @@ export const ButtonWrapper = styled.button`
   border: unset;
   cursor: pointer;
   pointer-events: ${({ disabled }) => (disabled ? 'none' : 'unset')};
+  transition: background-color 0.3s ease;
+  
   color: ${({ disabled }) =>
     disabled ? paletteColors.lightGrey : paletteColors.black};
+
+  &:hover {
+    background-color: ${paletteColors.darkSmokeGrey};
+  }
 `;

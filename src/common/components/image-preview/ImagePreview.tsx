@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, HTMLProps, ReactEventHandler } from 'react';
+import { FC, HTMLAttributes, HTMLProps, ReactEventHandler } from 'react';
 import emptyImage from '@/application/assets/image-preview.jpg';
 
 type Props = HTMLAttributes<HTMLImageElement> &
@@ -7,7 +7,7 @@ type Props = HTMLAttributes<HTMLImageElement> &
     fallback?: string | null;
   };
 
-const ImagePreview: React.FC<Props> = ({
+const ImagePreview: FC<Props> = ({
   alt = '',
   src = '',
   fallback = emptyImage,

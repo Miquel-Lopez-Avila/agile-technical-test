@@ -1,13 +1,13 @@
-import React from 'react';
-import { Main, Wrapper } from './PageLayout.styled';
+import { FC, ReactNode } from 'react';
 import Header from '@/application/components/header/Header';
 import Footer from '@/application/components/footer/Footer';
+import { Main, Wrapper } from './PageLayout.styled';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const PageLayout: React.FC<Props> = ({ children }) => {
+const PageLayout: FC<Props> = ({ children }) => {
   return (
     <Wrapper>
       <Header />

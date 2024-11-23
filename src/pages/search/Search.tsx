@@ -41,7 +41,7 @@ const Search = () => {
 
     setAnimals(
       data.filter((item: Animal) => {
-        return item.type.includes(searchValue);
+        return item.type.toLowerCase().includes(searchValue.toLowerCase());
       })
     );
   };
@@ -95,6 +95,18 @@ const Search = () => {
       clearTimeout(timeout);
     };
   }, [searchValue]);
+
+  // add a useEffect to handle the click on the backdrop and hide it
+  useEffect(() => {
+    const backdrop = document.querySelector('.backdrop') as HTMLElement;
+
+    if (!backdrop) return;
+
+    backdrop.onclick = () => {
+      setSelectedAnimal(null);
+      hideMobilePreview();
+    };
+  }, []);
 
   return (
     <Wrapper>

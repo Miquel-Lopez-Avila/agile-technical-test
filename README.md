@@ -1,50 +1,56 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was created for agile content process. It's a simple search engine that allows users to search for animals by their title, description, or image.
 
-Currently, two official plugins are available:
+**Staging:** https://agile-technical-test.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting started
 
-## Expanding the ESLint configuration
+```
+  git clone
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  cd agile-technical-test
 
-- Configure the top-level `parserOptions` property like this:
+  npm i
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+  npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Layout
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+.
+└── agile-technical-test/
+    ├── public
+    └── src/
+        ├── application/
+        ├── common/
+        ├── pages/
+        ├── Application.tsx
+        └── main.tsx
 ```
+
+`common`: Where all the common components are located.
+
+`application`: Where all structural components of the application are located.
+
+`pages`: Where all the pages of the application are located.
+
+## Code quality
+
+It is made with
+
+- [ESLint](https://eslint.org/) and
+- [Prettier](https://prettier.io/) to ensure code quality and consistency.
+
+## Styles
+
+I've used **styled-components** to create a consistent and reusable style system for the project. It allows us to define reusable components and styles that can be easily applied to different parts of the application.
+
+## Testing
+
+Finally, I've used **Cypress and Vitest**. These tests ensure that the application functions as expected and that it meets the requirements.
+
+## Authors
+
+- [@Miquel-Lopez-Avila](https://github.com/Miquel-Lopez-Avila)

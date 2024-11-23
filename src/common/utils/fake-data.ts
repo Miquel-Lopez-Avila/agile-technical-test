@@ -13,7 +13,8 @@ const getText = () => faker.lorem.sentences();
 const getTitle = (type: keyof typeof faker.animal) =>
   faker.animal[type]?.() || 'Lorem ipsum';
 
-export const getAllAnimals = () => Object.keys(faker.animal);
+export const getAllAnimals = () =>
+  Object.keys(faker.animal).filter((item) => item !== 'faker');
 
 const data: Animal[] = [...new Array(100)].map((_, index) => {
   const type = getType();

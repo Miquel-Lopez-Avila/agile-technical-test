@@ -3,8 +3,11 @@ import { paletteColors } from '@/application/styles/palette-colors';
 import { device } from '@/application/styles/breakpoints';
 
 export const Wrapper = styled.header`
-  padding: 10px 15px;
+  padding: 6px 15px;
   border-bottom: 1px solid ${paletteColors.lightGrey};
+  position: sticky;
+  background-color: white;
+  top: 0;
 `;
 
 export const Container = styled.div`
@@ -12,7 +15,6 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  max-width: 1200px;
 `;
 
 export const ContainerBrand = styled.div`
@@ -23,6 +25,7 @@ export const ContainerBrand = styled.div`
   flex-wrap: wrap;
   gap: 5px;
   width: 100%;
+  min-height: 42px;
 
   @media ${device.tablet} {
     gap: 20px;
@@ -58,6 +61,7 @@ export const ContainerLogo = styled.div`
 
 export const ProfileImage = styled.img`
   display: flex;
-  width: 48px;
-  padding: 4px;
+  width: 42px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 `;

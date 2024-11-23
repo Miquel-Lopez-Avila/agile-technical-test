@@ -27,15 +27,14 @@ const Header = () => {
             <>
               <ContainerLogo>
                 <Link href="/home">
-                  <Logo width={92} cursor="pointer" />
+                  <Logo width={92} />
                 </Link>
               </ContainerLogo>
               <SearchForm showSubmitButton={false} size={Size.SMALL} />
             </>
           ) : (
             <BrandName>
-              <span style={{ fontWeight: 'bold' }}>Agile Content</span> Frontend
-              test
+              <b>Agile Content</b> Frontend test
             </BrandName>
           )}
         </ContainerBrand>

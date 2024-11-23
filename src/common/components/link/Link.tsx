@@ -1,15 +1,16 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
+import { Wrapper } from './Link.styled';
 
-interface props {
+interface Props {
   href: string;
-  target?: string;
-  children: React.ReactNode;
+  target?: string;   
+  children: ReactNode;
 }
-const Link: React.FC<props> = ({ href, children = '', ...rest }) => {
+const Link: FC<Props> = ({ href, children = '', ...rest }) => {
   return (
-    <a href={href} {...rest}>
+    <Wrapper href={href} {...rest}>
       {children}
-    </a>
+    </Wrapper>
   );
 };
 
