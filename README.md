@@ -51,6 +51,8 @@ I've used **styled-components** to create a consistent and reusable style system
 
 Finally, I've used **Cypress and Vitest**. These tests ensure that the application functions as expected and that it meets the requirements.
 
+![search cy ts-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a8ea8862-3890-4c76-adf0-e8eda9e76d69)
+
 ## Authors
 
 - [@Miquel-Lopez-Avila](https://github.com/Miquel-Lopez-Avila)
