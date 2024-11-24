@@ -3,7 +3,7 @@ import ImagePreview from '@/common/components/image-preview/ImagePreview';
 import { paletteColors } from '@/application/styles/palette-colors';
 import Link from '@/common/components/link/Link';
 
-export const Wrapper = styled.section   `
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   gap: 10px;

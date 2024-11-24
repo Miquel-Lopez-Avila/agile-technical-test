@@ -1,5 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-import ErrorBoundary from '@/pages/error-boundary/ErrorBoundary';
+import notFoundImage from '@/application/assets/not-found.svg';
+import appErrorImg from '@/application/assets/bug-fixing.svg';
+import ErrorPage from '@/pages/error-page/ErrorPage';
 import PageLayout from '@/application/components/page-layout/PageLayout';
 import AppLayout from '@/application/components/app-layout/AppLayout';
 import { Paths } from '@/application/enums/router-paths';
@@ -8,7 +10,11 @@ const Router = createBrowserRouter([
   {
     path: Paths.ROOT,
     element: <AppLayout />,
-    errorElement: <ErrorBoundary />,
+    errorElement: (
+      <PageLayout>
+        <ErrorPage alt="error" img={appErrorImg} text="An error has occurred" />
+      </PageLayout>
+    ),
     children: [
       {
         path: '',
@@ -52,7 +58,11 @@ const Router = createBrowserRouter([
       },
       {
         path: '*',
-        element: <h1>404 PAGE</h1>
+        element: (
+          <PageLayout>
+            <ErrorPage alt="404" img={notFoundImage} text="Page not found" />
+          </PageLayout>
+        )
       }
     ]
   }

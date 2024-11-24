@@ -11,9 +11,9 @@ import {
   Form,
   ContainerIcons,
   TextareaField
-} from './search-form.styled';
+} from './SearchForm.styled';
 
-interface Props {
+interface Props    {
   showSubmitButton?: boolean;
   size?: Size.MEDIUM | Size.SMALL;
 }
@@ -83,6 +83,7 @@ const SearchForm: FC<Props> = ({
         <TextareaField
           maxLength={2048}
           value={searchValue}
+          data-testid="search"
           aria-label={t('components.searchForm.search')}
           ref={textareaRef}
           onKeyDown={handleKeyDownTextarea}
@@ -97,7 +98,11 @@ const SearchForm: FC<Props> = ({
           <CloseIcon onClick={handleResetForm} />
         </ContainerIcons>
       </Wrapper>
-      {showSubmitButton && <Button disabled={!searchValue}>{t('components.searchForm.search')}</Button>}
+      {showSubmitButton && (
+        <Button data-testid="submit-button" disabled={!searchValue}>
+          {t('components.searchForm.search')}
+        </Button>
+      )}
     </Form>
   );
 };

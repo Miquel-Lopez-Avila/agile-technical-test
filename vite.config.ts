@@ -12,6 +12,12 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [react(), tsConfigPaths()],
     base: '/',
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/__test__/setupTests.ts',
+      testTimeout: 30000,
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src') 

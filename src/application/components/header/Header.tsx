@@ -3,7 +3,7 @@ import Link from '@/common/components/link/Link';
 import profileImg from '@/application/assets/profile.png';
 import appImage from '@/application/assets/app-drawer.png';
 import Logo from '@/application/components/logo/Logo';
-import SearchForm from '@/common/components/search-form/search-form';
+import SearchForm from '@/common/components/search-form/SearchForm';
 import { Size } from '@/common/components/search-form/enums';
 import {
   AppStoreIcon,
@@ -27,7 +27,7 @@ const Header = () => {
             <>
               <ContainerLogo>
                 <Link href="/home">
-                  <Logo width={92} />
+                  <Logo width={92} height={31} />
                 </Link>
               </ContainerLogo>
               <SearchForm showSubmitButton={false} size={Size.SMALL} />
