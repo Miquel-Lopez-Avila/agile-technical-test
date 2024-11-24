@@ -7,12 +7,11 @@ export const Wrapper = styled.div`
 
   @media ${device.tablet} {
     min-height: calc(100vh - 55px - 50px);
-    padding: 30px 20px;
+    padding: 30px 107px;
   }
 `;
 
 export const Container = styled.div`
-  max-width: 1230px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -26,7 +25,7 @@ export const Container = styled.div`
 export const ContainerSections = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   flex: 4;
   width: 100%;
 `;

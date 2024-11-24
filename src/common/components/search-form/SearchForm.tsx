@@ -13,7 +13,7 @@ import {
   TextareaField
 } from './SearchForm.styled';
 
-interface Props    {
+interface Props {
   showSubmitButton?: boolean;
   size?: Size.MEDIUM | Size.SMALL;
 }
@@ -95,7 +95,7 @@ const SearchForm: FC<Props> = ({
           }}
         />
         <ContainerIcons>
-          <CloseIcon onClick={handleResetForm} />
+          {searchValue && <CloseIcon onClick={handleResetForm} />}
         </ContainerIcons>
       </Wrapper>
       {showSubmitButton && (

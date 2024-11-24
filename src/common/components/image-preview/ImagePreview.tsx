@@ -17,7 +17,20 @@ const ImagePreview: FC<Props> = ({
     event.currentTarget.src = fallback as string;
   };
 
-  return <img src={src || ''} onError={handleImageError} alt={alt} {...rest} />;
+  return (
+    <img
+      src={src || ''}
+      style={{
+        backgroundImage: `url(${fallback})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center'
+      }}
+      onError={handleImageError}
+      alt={alt}
+      {...rest}
+    />
+  );
 };
 
 export default ImagePreview;

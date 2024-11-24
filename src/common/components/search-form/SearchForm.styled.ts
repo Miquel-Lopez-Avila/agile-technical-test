@@ -54,6 +54,7 @@ export const ContainerIcons = styled.div`
   display: grid;
   place-items: center;
   height: fit-content;
+  width: 42px;
 `;
 
 const textareaFieldMedium = css`

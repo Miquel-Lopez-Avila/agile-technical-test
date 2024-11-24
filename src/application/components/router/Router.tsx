@@ -11,9 +11,11 @@ const Router = createBrowserRouter([
     path: Paths.ROOT,
     element: <AppLayout />,
     errorElement: (
-      <PageLayout>
-        <ErrorPage alt="error" img={appErrorImg} text="An error has occurred" />
-      </PageLayout>
+      <PageLayout
+        component={
+          <ErrorPage alt="error" img={appErrorImg} text="pages.error.error" />
+        }
+      />
     ),
     children: [
       {
@@ -26,11 +28,7 @@ const Router = createBrowserRouter([
           const Home = (await import('@/pages/home/Home')).default;
 
           return {
-            element: (
-              <PageLayout>
-                <Home />
-              </PageLayout>
-            )
+            element: <PageLayout component={<Home />} />
           };
         }
       },
@@ -48,20 +46,22 @@ const Router = createBrowserRouter([
           }
 
           return {
-            element: (
-              <PageLayout>
-                <Search />
-              </PageLayout>
-            )
+            element: <PageLayout component={<Search />} />
           };
         }
       },
       {
         path: '*',
         element: (
-          <PageLayout>
-            <ErrorPage alt="404" img={notFoundImage} text="Page not found" />
-          </PageLayout>
+          <PageLayout
+            component={
+              <ErrorPage
+                alt="404"
+                img={notFoundImage}
+                text="pages.error.notFound"
+              />
+            }
+          />
         )
       }
     ]

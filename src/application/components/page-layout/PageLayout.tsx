@@ -4,14 +4,14 @@ import Footer from '@/application/components/footer/Footer';
 import { Main, Wrapper } from './PageLayout.styled';
 
 interface Props {
-  children: ReactNode;
+  component: ReactNode;
 }
 
-const PageLayout: FC<Props> = ({ children }) => {
+const PageLayout: FC<Props> = ({ component }) => {
   return (
     <Wrapper>
       <Header />
-      <Main>{children}</Main>
+      <Main>{component}</Main>
       <Footer />
     </Wrapper>
   );

@@ -7,7 +7,7 @@ import SearchForm from '@/common/components/search-form/SearchForm';
 import { Size } from '@/common/components/search-form/enums';
 import {
   AppStoreIcon,
-  BrandName,
+  CompanyName,
   Container,
   ContainerBrand,
   ContainerLogo,
@@ -25,7 +25,7 @@ const Header = () => {
         <ContainerBrand>
           {isSearchView ? (
             <>
-              <ContainerLogo>
+              <ContainerLogo data-testid="logo">
                 <Link href="/home">
                   <Logo width={92} height={31} />
                 </Link>
@@ -33,9 +33,9 @@ const Header = () => {
               <SearchForm showSubmitButton={false} size={Size.SMALL} />
             </>
           ) : (
-            <BrandName>
+            <CompanyName data-testid="company-name">
               <b>Agile Content</b> Frontend test
-            </BrandName>
+            </CompanyName>
           )}
         </ContainerBrand>
         <ContainerProfile>

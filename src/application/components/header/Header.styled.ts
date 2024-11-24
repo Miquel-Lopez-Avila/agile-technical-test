@@ -46,7 +46,7 @@ export const ContainerProfile = styled.div`
   }
 `;
 
-export const BrandName = styled.p`
+export const CompanyName = styled.p`
   text-align: left;
 `;
 
