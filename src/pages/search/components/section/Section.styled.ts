@@ -17,6 +17,7 @@ export const SectionLink = styled(Link)`
   color: ${paletteColors.black};
   text-decoration: none;
   width: fit-content;
+  white-space: nowrap;
 `;
 
 export const Title = styled.p`
@@ -24,6 +25,7 @@ export const Title = styled.p`
   font-size: 22px;
   cursor: pointer;
   width: fit-content;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
