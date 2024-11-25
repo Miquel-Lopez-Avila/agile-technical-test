@@ -45,5 +45,5 @@
       "react/no-array-index-key": ["off"],
       "consistent-return": ["off"]
     },
-    "ignorePatterns": ["public", "cypress.config.ts", "vite.config.ts"]
+    "ignorePatterns": ["public", "cypress.config.ts", "cypress", "vite.config.ts"]
   }

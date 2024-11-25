@@ -13,10 +13,6 @@
     "coverage:ui": "vitest --ui",
     "cy:open": "cypress open"
   },
-  "volta": {
-    "node": "22.10.0",
-    "npm": "10.9.1"
-  },
   "dependencies": {
     "@ant-design/icons": "^5.5.1",
     "i18next": "^24.0.0",
