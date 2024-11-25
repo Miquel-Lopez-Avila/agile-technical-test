@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-This project was created for agile content process. It's a simple search engine that allows users to search for animals by their title, description, or image.
+This project was created for agile content process. It's a simple search engine that allows users to search for animals by their type.
 
 ![video2](https://github.com/user-attachments/assets/600ab3e1-0dde-4017-9c3f-110e28b1aed5)
 
