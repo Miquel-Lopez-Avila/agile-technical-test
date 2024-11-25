@@ -1,4 +1,4 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
@@ -9,6 +9,6 @@ export default defineConfig({
     video: true,
     chromeWebSecurity: false,
     requestTimeout: 10000,
-    setupNodeEvents(on, config) {},
-  },
+    setupNodeEvents() {}
+  }
 });

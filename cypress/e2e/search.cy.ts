@@ -8,5 +8,6 @@ describe('Search in Home page', () => {
     cy.get('[data-testid="submit-button"]').click()
     cy.url().should('include', 'search')
     cy.get('[data-testid="search-container"]').should('be.visible')
+    cy.get('[data-title]').first().click()
   })
 })

@@ -110,7 +110,7 @@ const Search = () => {
 
   return (
     <Wrapper>
-      <Container data-testid="search-container">
+      <Container>
         <ContainerSections>
           {!animals?.length && !isLoading && (
             <NoMatchFound searchValue={searchValue} />

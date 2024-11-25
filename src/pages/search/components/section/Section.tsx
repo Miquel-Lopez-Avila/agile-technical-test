@@ -13,7 +13,9 @@ const Section: FC<Props> = ({ title, description, link, showPreview }) => (
     <SectionLink href={link} target="_blank">
       {link}
     </SectionLink>
-    <Title onClick={showPreview}>{title}</Title>
+    <Title onClick={showPreview} data-title={title}>
+      {title}
+    </Title>
     <Description>{description}</Description>
   </Wrapper>
 );

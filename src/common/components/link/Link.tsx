@@ -3,7 +3,7 @@ import { Wrapper } from './Link.styled';
 
 interface Props {
   href: string;
-  target?: string;   
+  target?: string;
   children: ReactNode;
 }
 const Link: FC<Props> = ({ href, children = '', ...rest }) => {

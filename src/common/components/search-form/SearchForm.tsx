@@ -61,12 +61,8 @@ const SearchForm: FC<Props> = ({
     textareaRef.current.setAttribute('rows', nextRows);
   };
 
-  /**
-   * Function to handle the enter key press to submit the form instead of
-   * adding a new line to the textarea
-   * @param event
-   * @returns {void}
-   */
+  // Function to handle the enter key press to submit the form instead of
+  // adding a new line to the textarea
   const handleKeyDownTextarea = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -90,7 +86,7 @@ const SearchForm: FC<Props> = ({
           name="q"
           rows={textareaBaseRows}
           onChange={(e) => {
-            autoGrowTextarea();
+            if (size === Size.MEDIUM) autoGrowTextarea();
             setSearchValue(e.target.value);
           }}
         />

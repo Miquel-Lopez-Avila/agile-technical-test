@@ -1,7 +1,6 @@
 import { FC, ReactNode } from 'react';
 import Header from '@/application/components/header/Header';
 import Footer from '@/application/components/footer/Footer';
-import { Main, Wrapper } from './PageLayout.styled';
 
 interface Props {
   component: ReactNode;
@@ -9,11 +8,11 @@ interface Props {
 
 const PageLayout: FC<Props> = ({ component }) => {
   return (
-    <Wrapper>
+    <div>
       <Header />
-      <Main>{component}</Main>
+      <main>{component}</main>
       <Footer />
-    </Wrapper>
+    </div>
   );
 };
 

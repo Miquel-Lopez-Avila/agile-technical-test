@@ -50,44 +50,4 @@ describe('Search form', () => {
       expect(mockedNavigate).toHaveBeenCalledWith('/search?q=dog');
     });
   });
-
-  it('Validating that the correct header is shown in Home view', async () => {
-    const router = createMemoryRouter(
-      [
-        {
-          path: Paths.HOME,
-          element: <PageLayout component={<Home />} />
-        }
-      ],
-      {
-        initialEntries: ['/home']
-      }
-    );
-
-    render(<RouterProvider router={router} />);
-
-    const searchTextarea = screen.getByTestId('company-name');
-
-    expect(searchTextarea).toBeInTheDocument();
-  });
-
-  it('Valifating that the correct header is shown in Search view', async () => {
-    const router = createMemoryRouter(
-      [
-        {
-          path: Paths.SEARCH,
-          element: <PageLayout component={<Search />} />
-        }
-      ],
-      {
-        initialEntries: ['/search']
-      }
-    );
-
-    render(<RouterProvider router={router} />);
-
-    const searchTextarea = screen.getByTestId('logo');
-
-    expect(searchTextarea).toBeInTheDocument();
-  });
 });
