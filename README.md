@@ -2,6 +2,9 @@
 
 This project was created for agile content process. It's a simple search engine that allows users to search for animals by their title, description, or image.
 
+![video2](https://github.com/user-attachments/assets/600ab3e1-0dde-4017-9c3f-110e28b1aed5)
+
+
 **Staging:** https://agile-technical-test.vercel.app/
 
 ## Getting started
@@ -51,7 +54,8 @@ I've used **styled-components** to create a consistent and reusable style system
 
 Finally, I've used **Cypress and Vitest**. These tests ensure that the application functions as expected and that it meets the requirements.
 
-![search cy ts-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a8ea8862-3890-4c76-adf0-e8eda9e76d69)
+![search cy ts-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/1f8520fe-af0a-4a97-b923-b8290a782643)
+
 
 ## Authors
 
